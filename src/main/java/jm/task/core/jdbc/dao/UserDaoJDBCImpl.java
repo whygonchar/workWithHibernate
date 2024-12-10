@@ -29,7 +29,7 @@ public class UserDaoJDBCImpl extends Util implements UserDao {
     }
 
     public void dropUsersTable() throws SQLException {
-        String sql = "DROP TABLE users";
+        String sql = "DROP TABLE IF EXISTS users";
 
         try (Statement stmt = connection.createStatement()) {
             stmt.execute(sql);
